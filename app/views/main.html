@@ -3,16 +3,20 @@
 
 <section class="main row">
 
-	<div class="circle gesture">
+	<div class="circle gesture" ng-class="{active: gesture.type == 'circle'}">
 		circle
+		<span class="count">{{gesture.count}}</span>
 	</div>
-	<div class="swipe gesture">
+	<div class="swipe gesture" ng-class="{active: gesture.type == 'swipe'}">
 		swipe
+		<span class="count">{{gesture.count}}</span>
 	</div>
-	<div class="screenTap gesture">
+	<div class="screenTap gesture" ng-class="{active: gesture.type == 'screenTap'}">
 		screenTap
+		<span class="count">{{gesture.count}}</span>
 	</div>
-	<div class="keyTap gesture">
+	<div class="keyTap gesture" ng-class="{active: gesture.type == 'keyTap'}">
 		keyTap
+		<span class="count">{{gesture.count}}</span>
 	</div>
 </section>

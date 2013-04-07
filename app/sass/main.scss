@@ -1,0 +1,29 @@
+body{
+	background: chocolate;
+}
+
+
+
+.gesture{
+	padding: 10px;
+	background: wheat;
+	margin-right: 10px;
+	float: left;
+	opacity: 0.5;
+
+	.count{
+		display: none;
+	}
+
+	&.active{
+		opacity: 1;
+		font-weight: bold;
+
+		.count{
+			display: block;
+			float: left;
+			font-weight: 300;
+		}
+	}
+}
+

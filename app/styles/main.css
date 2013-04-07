@@ -1,7 +1,28 @@
-.gesture{
-	width: 100px;
-	height: 100px;
-	background: wheat;
-	margin-right: 10px;
-	float: left;
+/* line 1, ../sass/main.scss */
+body {
+  background: chocolate;
+}
+
+/* line 7, ../sass/main.scss */
+.gesture {
+  padding: 10px;
+  background: wheat;
+  margin-right: 10px;
+  float: left;
+  opacity: 0.5;
+}
+/* line 14, ../sass/main.scss */
+.gesture .count {
+  display: none;
+}
+/* line 18, ../sass/main.scss */
+.gesture.active {
+  opacity: 1;
+  font-weight: bold;
+}
+/* line 22, ../sass/main.scss */
+.gesture.active .count {
+  display: block;
+  float: left;
+  font-weight: 300;
 }

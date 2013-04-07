@@ -5,22 +5,36 @@ angular.module('leapDemo')
 	// Start Leap controller
 	Leap.init();
 
+	$scope.gesture ={};
+	$scope.gesture.count = 0;
+
+	$scope.$watch('gesture.type', function(gn, go){
+		$scope.gesture.count = 0;
+	});
+
+	function updateGesture(type){
+		$scope.gesture.type = type;
+		// console.log('CIRCLE ROOT' + type);
+		$scope.$apply($scope.gesture.type = type);
+		$scope.$apply($scope.gesture.count++);
+	}
 
 	$rootScope.$on('leap.circle', function(){
-		console.log('CIRCLE ROOT SCOPE');
+		updateGesture('circle');
 	});
 
 	$rootScope.$on('leap.screenTap', function(){
-		console.log('SCREENTAP ROOT SCOPE');
+		updateGesture('screenTap');
 	});
 
-
 	$rootScope.$on('leap.keyTap', function(){
-		console.log('key TAP ROOT SCOPE');
+		updateGesture('keyTap');
 	});
 
 	$rootScope.$on('leap.swipe', function(){
-		console.log('Swipe ROOT SCOPE');
+		updateGesture('swipe');
 	});
+
+
 	
   });
